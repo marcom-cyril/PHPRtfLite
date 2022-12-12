@@ -1,10 +1,11 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test class for PHPRtfLite_Border_Format
  */
-class PHPRtfLite_Border_FormatTest extends PHPUnit_Framework_TestCase
+class PHPRtfLite_Border_FormatTest extends TestCase
 {
 
     public function testGetContentWithTypeSingle()

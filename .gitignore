@@ -2,3 +2,5 @@
 generateSampleFiles.php
 .gitignore
 /vendor/
+/tests/.phpunit.result.cache
+

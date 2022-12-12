@@ -1,9 +1,11 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test class for PHPRtfLite_DocHead_FontTable
  */
-class PHPRtfLite_DocHead_FontTableTest extends PHPUnit_Framework_TestCase
+class PHPRtfLite_DocHead_FontTableTest extends TestCase
 {
 
     /**

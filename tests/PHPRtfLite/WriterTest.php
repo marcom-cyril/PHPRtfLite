@@ -1,6 +1,8 @@
 <?php
 
-class PHPRtfLite_WriterTest extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class PHPRtfLite_WriterTest extends TestCase
 {
 
     public function testWriteOutputAsString()

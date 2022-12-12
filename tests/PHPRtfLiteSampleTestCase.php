@@ -1,4 +1,7 @@
 <?php
+
+use PHPUnit\Framework\TestCase;
+
 /**
  * PHPRtfLiteSampleTest
  *
@@ -6,13 +9,13 @@
  *
  * @author sz
  */
-abstract class PHPRtfLiteSampleTestCase extends PHPUnit_Framework_TestCase
+abstract class PHPRtfLiteSampleTestCase extends TestCase
 {
 
     abstract protected function getSampleFile();
 
 
-    protected function tearDown()
+    protected function tearDown() : void
     {
         $this->copyTempFileToSample();
     }

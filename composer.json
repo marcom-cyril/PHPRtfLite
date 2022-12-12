@@ -1,7 +1,6 @@
 {
     "name": "phprtflite/phprtflite",
     "description": "PHPRtfLite is an API enabling developers to create rtf documents with php.",
-    "version": "dev",
     "license": "GPL-3.0",
     "authors": [
         {
@@ -10,12 +9,20 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {
-
-    },
     "autoload": {
-        "psr-0": {
-            "PHPRtfLite": "lib/"
+        "psr-4": {
+            "\\": "lib/"
+        },
+        "classmap": [
+            "lib/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": { 
+            "\\Tests\\": "tests/"
         }
+     }, 
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }

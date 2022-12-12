@@ -1,9 +1,11 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test class for PHPRtfLite_DocHead_ColorTable
  */
-class PHPRtfLite_DocHead_ColorTableTest extends PHPUnit_Framework_TestCase
+class PHPRtfLite_DocHead_ColorTableTest extends TestCase
 {
 
     /**

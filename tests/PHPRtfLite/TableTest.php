@@ -1,9 +1,11 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test class for PHPRtfLite.
  */
-class PHPRtfLite_TableTest extends PHPUnit_Framework_TestCase
+class PHPRtfLite_TableTest extends TestCase
 {
     /**
      * @var PHPRtfLite_Table
@@ -14,7 +16,7 @@ class PHPRtfLite_TableTest extends PHPUnit_Framework_TestCase
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
-    protected function setUp()
+    protected function setUp() : void
     {
         $rtf = new PHPRtfLite;
         $this->_table = $rtf->addSection()->addTable();
@@ -66,10 +68,10 @@ class PHPRtfLite_TableTest extends PHPUnit_Framework_TestCase
 
     /**
      * tests getRow
-     * @expectedException PHPRtfLite_Exception
      */
     public function testGetRow()
     {
+        $this->expectException(PHPRtfLite_Exception::class);
         $this->_table->getRow(1);
     }
 
@@ -108,10 +110,10 @@ class PHPRtfLite_TableTest extends PHPUnit_Framework_TestCase
     /**
      * tests getColumn
      * @depends testGetColumn
-     * @expectedException PHPRtfLite_Exception
      */
     public function testGetColumnWithInvalidIndex(PHPRtfLite_Table $table)
     {
+        $this->expectException(PHPRtfLite_Exception::class);
         $this->assertInstanceOf('PHPRtfLite_Table_Column', $table->getColumn(4));
     }
 
@@ -127,10 +129,10 @@ class PHPRtfLite_TableTest extends PHPUnit_Framework_TestCase
 
     /**
      * tests getCell
-     * @expectedException PHPRtfLite_Exception
      */
     public function testGetCellWithInvalidIndex()
     {
+        $this->expectException(PHPRtfLite_Exception::class);
         $this->_table->addRow(1);
         $this->_table->addColumnsList(array(2, 2));
         $this->_table->getCell(1, 3);

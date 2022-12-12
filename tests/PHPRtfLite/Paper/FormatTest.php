@@ -1,24 +1,22 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test class for PHPRtfLite_Paper_FormatTest
  */
-class PHPRtfLite_Paper_FormatTest extends PHPUnit_Framework_TestCase
+class PHPRtfLite_Paper_FormatTest extends TestCase
 {
-    /**
-     * @expectedException PHPRtfLite_Exception
-     */
     public function testGetPaperWidthByPaperFormatThrowsException()
     {
+        $this->expectException(PHPRtfLite_Exception::class);
         PHPRtfLite_Paper_Format::getPaperWidthByPaperFormat('not_supported_paper_format');
     }
 
 
-    /**
-     * @expectedException PHPRtfLite_Exception
-     */
     public function testGetPaperHeightByPaperFormatThrowsException()
     {
+        $this->expectException(PHPRtfLite_Exception::class);
         PHPRtfLite_Paper_Format::getPaperHeightByPaperFormat('not_supported_paper_format');
     }
 

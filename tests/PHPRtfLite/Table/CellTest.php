@@ -1,9 +1,11 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test class for PHPRtfLite_Table_Cell
  */
-class PHPRtfLite_Table_CellTest extends PHPUnit_Framework_TestCase
+class PHPRtfLite_Table_CellTest extends TestCase
 {
 
     /**

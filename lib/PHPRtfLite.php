@@ -241,7 +241,7 @@ class PHPRtfLite
 
     public function __construct()
     {
-        $this->setPaperFormat(PHPRtfLite_Paper_Format::FORMAT_A4);
+        $this->setPaperFormat(\PHPRtfLite_Paper_Format::FORMAT_A4);
     }
 
 

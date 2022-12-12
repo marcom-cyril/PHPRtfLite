@@ -1,9 +1,11 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test class for PHPRtfLite_Container
  */
-class PHPRtfLite_ContainerTest extends PHPUnit_Framework_TestCase
+class PHPRtfLite_ContainerTest extends TestCase
 {
 
     /**
@@ -15,7 +17,7 @@ class PHPRtfLite_ContainerTest extends PHPUnit_Framework_TestCase
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
-    protected function setUp()
+    protected function setUp() : void
     {
         $rtf = new PHPRtfLite();
         $writer = new PHPRtfLite_Writer_String();

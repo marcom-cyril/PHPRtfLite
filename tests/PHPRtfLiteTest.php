@@ -1,9 +1,11 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test class for PHPRtfLite.
  */
-class PHPRtfLiteTest extends PHPUnit_Framework_TestCase
+class PHPRtfLiteTest extends TestCase
 {
     /**
      * @var PHPRtfLite
@@ -14,7 +16,7 @@ class PHPRtfLiteTest extends PHPUnit_Framework_TestCase
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
-    protected function setUp()
+    protected function setUp() : void
     {
         $this->_rtf = new PHPRtfLite;
     }
@@ -82,10 +84,10 @@ class PHPRtfLiteTest extends PHPUnit_Framework_TestCase
 
     /**
      * tests addHeader with expected exception for odd even pages
-     * @expectedException PHPRtfLite_Exception
      */
     public function _testAddHeaderEvenOddException()
     {
+        $this->expectException(PHPRtfLite_Exception::class);
         $this->_rtf->addHeader(PHPRtfLite_Container_Header::TYPE_LEFT);
         $this->_rtf->getContent();
     }
@@ -114,10 +116,10 @@ class PHPRtfLiteTest extends PHPUnit_Framework_TestCase
 
     /**
      * tests addHeader with expected exception for all page header
-     * @expectedException PHPRtfLite_Exception
      */
     public function testAddHeaderAllException()
     {
+        $this->expectException(PHPRtfLite_Exception::class);
         $this->_rtf->setOddEvenDifferent();
         $this->_rtf->addHeader(PHPRtfLite_Container_Header::TYPE_ALL);
         $this->_rtf->getContent();

@@ -1,10 +1,11 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test class for PHPRtfLite.
  */
-class PHPRtfLite_Container_SectionTest extends PHPUnit_Framework_TestCase
+class PHPRtfLite_Container_SectionTest extends TestCase
 {
 
     /**
@@ -23,7 +24,7 @@ class PHPRtfLite_Container_SectionTest extends PHPUnit_Framework_TestCase
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
-    protected function setUp()
+    protected function setUp() : void
     {
         $this->_rtf = new PHPRtfLite;
         $this->_section = new PHPRtfLite_Container_Section($this->_rtf);
@@ -74,10 +75,10 @@ class PHPRtfLite_Container_SectionTest extends PHPUnit_Framework_TestCase
     /**
      * tests PHPRtfLite_Container_Section::getLayoutWidth
      * @depends testGetLayoutWidthUsingSectionValues
-     * @expectedException PHPRtfLite_Exception
      */
     public function testGetLayoutWidthUsingSectionValuesException()
     {
+        $this->expectException(PHPRtfLite_Exception::class);
         $this->_section->setMarginLeft(5.3);
         $this->_section->setMarginRight(5.7);
         $this->_section->setPaperWidth(11);
@@ -110,10 +111,10 @@ class PHPRtfLite_Container_SectionTest extends PHPUnit_Framework_TestCase
     /**
      * test PHPRtfLite_Container_Section::setColumnWidths
      * @depends testSetColumnsWidths
-     * @expectedException PHPRtfLite_Exception
      */
     public function testSetColumnWidthsExceedingLayoutWidths()
     {
+        $this->expectException(PHPRtfLite_Exception::class);
         $this->_section->setPaperWidth(10);
         $expected = array(1.5, 5, 2.3, 2);
         $this->_section->setColumnWidths($expected);
